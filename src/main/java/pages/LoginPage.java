@@ -14,13 +14,14 @@ public class LoginPage extends HeaderPage implements IConstance {
     }
 
     public static final By SIGN_IN_BUTTON = By.xpath("//*[@class='login']");
-    public static final By CREATE_BUTTON = By.xpath("//*[@id='SubmitCreate']");
-    public static final By LOGIN_BUTTON = By.xpath("//*[@id='SubmitLogin']");
-    public static final By EMAIL_CREATE_LOCATOR = By.xpath("//*[@id='email_create']");
-    public static final By EMAIL_INPUT_LOCATOR = By.xpath("//*[@id='email']");
-    public static final By PASSWORD_INPUT_LOCATOR = By.xpath("//*[@id='passwd']");
+    public static final By CREATE_BUTTON = By.id("SubmitCreate");
+    public static final By LOGIN_BUTTON = By.id("SubmitLogin");
+    public static final By EMAIL_CREATE_LOCATOR = By.id("email_create");
+    public static final By EMAIL_INPUT_LOCATOR = By.id("email");
+    public static final By PASSWORD_INPUT_LOCATOR = By.id("passwd");
     public static final String ERROR_MESSAGE_LOCATOR = "//*[text()='%s']/ancestor::*[@class='alert alert-danger']";
-    public static final String CREATE_ACCOUNT_ERROR_MESSAGE_LOCATOR = "//*[@id='create_account_error']";
+    public static final By CREATE_ACCOUNT_ERROR_MESSAGE_LOCATOR = By.id("create_account_error");
+    public static final By LOGOUT_BUTTON = By.xpath("//*[@class='logout']");
 
     /**
      * login in site http://automationpractice.com/

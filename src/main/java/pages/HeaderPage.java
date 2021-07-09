@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HeaderPage {
     WebDriver driver;
-    public static final By HEADER_LOGO_LOCATOR = By.xpath("//*[@id='header']");
+    public static final By HEADER_LOGO_LOCATOR = By.id("header");
 
     public HeaderPage(WebDriver driver) {
         this.driver = driver;
