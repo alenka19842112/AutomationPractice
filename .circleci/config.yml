@@ -7,6 +7,9 @@ jobs:
   ui-tests:
     docker:
       - image: circleci/openjdk:8u265-jdk-browsers
+        auth:
+          username: email
+          password: password
     steps:
       - checkout
       - restore_cache:
