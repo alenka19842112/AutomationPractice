@@ -1,25 +1,23 @@
 package pages;
 
+import constans.IConstants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HeaderPage {
-    WebDriver driver;
+public class HeaderPage extends BasePage implements IConstants {
+
     public static final By HEADER_LOGO_LOCATOR = By.id("header");
+    public static final By SIGN_OUT_BUTTON = By.xpath("//*[@class='logout']");
 
     public HeaderPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     /**
-     * wait for page opened
+     * wait for Header Logo displayed
      *
-     * @param locator By locator
      */
-    public void waitForPageOpened(By locator) {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    public void waitForHeaderLogoDisplayed() {
+        waitForElementVisible(HEADER_LOGO_LOCATOR);
     }
 }

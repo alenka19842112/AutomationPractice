@@ -1,11 +1,11 @@
 package tests;
 
-import constans.IConstanceTest;
+import constans.ITestConstants;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.PropertyReader;
 
-public class LoginTest extends BaseTest implements IConstanceTest {
+public class LoginTest extends BaseTest implements ITestConstants {
 
     @Test(description = "Login with correct data Test", priority = 1)
     public void inputOfCorrectDataTest() {
@@ -17,6 +17,7 @@ public class LoginTest extends BaseTest implements IConstanceTest {
     @Test(description = "Login with incorrect email address Test", priority = 2)
     public void inputOfIncorrectEmailTest() {
         loginPage.login("", System.getenv().getOrDefault("Password", PropertyReader.getProperty("password")));
+
         Assert.assertEquals(loginPage.getErrorMessageText(ERROR_MESSAGE), ERROR_EMAIL_MESSAGE);
     }
 

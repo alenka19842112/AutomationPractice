@@ -1,9 +1,9 @@
 package pages;
 
-import constans.IConstance;
+import constans.IConstants;
 import org.openqa.selenium.WebDriver;
 
-public class MyAccountPage extends HeaderPage implements IConstance {
+public class MyAccountPage extends HeaderPage implements IConstants {
 
     public MyAccountPage(WebDriver driver) {
         super(driver);
@@ -15,6 +15,6 @@ public class MyAccountPage extends HeaderPage implements IConstance {
      * @return url "http://automationpractice.com/index.php?controller=my-account"
      */
     public String getMyAccountPageUrl() {
-        return driver.getCurrentUrl();
+        return getCurrentUrl();
     }
 }

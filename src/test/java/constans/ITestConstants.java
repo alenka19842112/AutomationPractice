@@ -1,6 +1,6 @@
 package constans;
 
-public interface IConstanceTest {
+public interface ITestConstants {
     String ERROR_MESSAGE = "There is 1 error";
     String ERROR_EMAIL_MESSAGE = ERROR_MESSAGE + "\nAn email address required.";
     String ERROR_PASSWORD_MESSAGE = ERROR_MESSAGE + "\nPassword is required.";
