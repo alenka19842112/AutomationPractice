@@ -30,7 +30,7 @@ public class LoginPage extends HeaderPage implements IConstants {
      * @return HomePage
      */
     @Step("Click 'Sign In' button and fill in {email} and {password} in Login field")
-    public HomePage login(String email, String password) {
+    public MyAccountPage login(String email, String password) {
         waitForHeaderLogoDisplayed();
         log.info("click Sign In button. Locator: " + SIGN_IN_BUTTON);
         driver.findElement(SIGN_IN_BUTTON).click();
@@ -41,7 +41,7 @@ public class LoginPage extends HeaderPage implements IConstants {
         driver.findElement(PASSWORD_INPUT_LOCATOR).sendKeys(password);
         log.info("click Login button. Locator:" + LOGIN_BUTTON);
         driver.findElement(LOGIN_BUTTON).click();
-        return new HomePage(driver);
+        return new MyAccountPage(driver);
     }
 
     /**
@@ -53,5 +53,20 @@ public class LoginPage extends HeaderPage implements IConstants {
     @Step("Error message when entering invalid data")
     public String getErrorMessageText(String message) {
         return driver.findElement(By.xpath(String.format(ERROR_MESSAGE_LOCATOR, message))).getText();
+    }
+
+    /**
+     * log out
+     *
+     * @param email    enter email address
+     * @param password enter password
+     * @return Login Page
+     */
+    @Step("Click 'Sign Out' button and log out")
+    public LoginPage signOut(String email, String password) {
+        login(email, password);
+        log.info("click Sign Out button. Locator: " + SIGN_OUT_BUTTON);
+        driver.findElement(SIGN_OUT_BUTTON).click();
+        return this;
     }
 }
