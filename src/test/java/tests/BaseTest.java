@@ -45,8 +45,8 @@ public class BaseTest {
         homePage.openPage();
     }
 
-    /*@AfterMethod(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void endTest() {
         driver.quit();
-    }*/
+    }
 }

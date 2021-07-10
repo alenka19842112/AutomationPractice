@@ -31,7 +31,7 @@ public class HeaderPage extends BasePage implements IConstants {
      * @return true
      */
     public boolean isDisplayedSignOutButton() {
-        return new WebDriverWait(driver, 3)
-               .until(ExpectedConditions.invisibilityOfElementLocated(HEADER_LOGO_LOCATOR));
+        return new WebDriverWait(driver, 5)
+               .until(ExpectedConditions.invisibilityOfElementLocated(SIGN_OUT_BUTTON));
     }
 }
