@@ -12,7 +12,7 @@ public class HomePage extends HeaderPage implements IConstants {
     }
 
     /**
-     * open Page "http://automationpractice.com/"
+     * open Home Page
      */
     @Step("Open Home page")
     public HomePage openPage() {

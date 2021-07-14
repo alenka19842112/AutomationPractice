@@ -19,13 +19,13 @@ public class LoginPage extends HeaderPage implements IConstants {
     public static final By EMAIL_CREATE_LOCATOR = By.id("email_create");
     public static final By EMAIL_INPUT_LOCATOR = By.id("email");
     public static final By PASSWORD_INPUT_LOCATOR = By.id("passwd");
-    public static final String ERROR_MESSAGE_LOCATOR = "//*[text()='%s']/ancestor::*[@class='alert alert-danger']";
+    public static final String ERROR_MESSAGE_LOCATOR = "//*[text()='%s']/ancestor::*[contains(@class,'alert-danger')]";
     public static final By CREATE_ACCOUNT_ERROR_MESSAGE_LOCATOR = By.id("create_account_error");
 
     /**
      * login in site http://automationpractice.com/
      *
-     * @param email    enter email address
+     * @param email enter email address
      * @param password enter password
      * @return HomePage
      */
@@ -53,20 +53,5 @@ public class LoginPage extends HeaderPage implements IConstants {
     @Step("Error message when entering invalid data")
     public String getErrorMessageText(String message) {
         return driver.findElement(By.xpath(String.format(ERROR_MESSAGE_LOCATOR, message))).getText();
-    }
-
-    /**
-     * log out
-     *
-     * @param email    enter email address
-     * @param password enter password
-     * @return Login Page
-     */
-    @Step("Click 'Sign Out' button and log out")
-    public LoginPage signOut(String email, String password) {
-        login(email, password);
-        log.info("click Sign Out button. Locator: " + SIGN_OUT_BUTTON);
-        driver.findElement(SIGN_OUT_BUTTON).click();
-        return this;
     }
 }

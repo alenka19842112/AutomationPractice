@@ -26,12 +26,24 @@ public class HeaderPage extends BasePage implements IConstants {
     }
 
     /**
-     * Is displayed Sign Out Button?
+     * Is Sign Out Button displayed?
      *
      * @return true
      */
-    public boolean isDisplayedSignOutButton() {
+    public boolean isSignOutButtonDisplayed() {
         return new WebDriverWait(driver, 5)
                .until(ExpectedConditions.invisibilityOfElementLocated(SIGN_OUT_BUTTON));
+    }
+
+    /**
+     * log out
+     *
+     * @return Login Page
+     */
+    @Step("Click 'Sign Out' button and log out")
+    public LoginPage signOut() {
+        log.info("click Sign Out button. Locator: " + SIGN_OUT_BUTTON);
+        driver.findElement(SIGN_OUT_BUTTON).click();
+        return new LoginPage(driver);
     }
 }
