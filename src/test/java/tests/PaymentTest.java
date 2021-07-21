@@ -13,10 +13,10 @@ public class PaymentTest extends BaseTest implements ITestConstants {
         myAccountPage.clickHomeButton();
         homePage.clickAddProductButton(PRODUCT_PRICE);
         productAddedToCartModalPage.clickProceedToCheckoutButton();
-        cartPage.clickProceedCheckoutButtonOnCartPage();
-        addressPage.clickProceedCheckoutButtonOnAddressPage();
+        cartPage.clickProceedCheckoutButton();
+        addressPage.clickProceedCheckoutButton();
         shippingPage.clickCheckboxOnShippingPage()
-                .clickProceedCheckoutButtonOnShippingPage();
+                .clickProceedCheckoutButton();
         paymentPage.clickPayBYButton(PAY_BY);
         orderSummaryPage.clickIConfirmMyOrderButton();
         Assert.assertEquals(orderConfirmationPage.getOrderStatus(),ORDER_STATUS);

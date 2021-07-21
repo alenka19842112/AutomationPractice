@@ -25,6 +25,7 @@ public class BaseTest {
     PaymentPage paymentPage;
     OrderSummaryPage orderSummaryPage;
     OrderConfirmationPage orderConfirmationPage;
+    CreateAnAccountPage createAnAccountPage;
 
     /**
      * object initialization
@@ -42,6 +43,7 @@ public class BaseTest {
         paymentPage = new PaymentPage(driver);
         orderSummaryPage = new OrderSummaryPage(driver);
         orderConfirmationPage = new OrderConfirmationPage(driver);
+        createAnAccountPage = new CreateAnAccountPage(driver);
     }
 
     @BeforeMethod

@@ -12,15 +12,12 @@ public class Account {
     private String city;
     private String state;
     private String zipCode;
-    private String country;
     private String information;
     private String mobilePhone;
 
-
-    public Account(String firstName, String lastName, String password,
-                   String dateOfBirthDay, String dateOfBirthMonth, String dateOfBirthYear,
-                   String company, String address, String city, String state, String zipCode,
-                   String country, String information, String mobilePhone) {
+    public Account(String firstName, String lastName, String password, String dateOfBirthDay,
+                   String dateOfBirthMonth, String dateOfBirthYear, String company, String address, String city,
+                   String state, String zipCode, String information, String mobilePhone) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
@@ -32,11 +29,9 @@ public class Account {
         this.city = city;
         this.state = state;
         this.zipCode = zipCode;
-        this.country = country;
         this.information = information;
         this.mobilePhone = mobilePhone;
     }
-
 
     public String getFirstName() {
         return firstName;
@@ -124,14 +119,6 @@ public class Account {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
     }
 
     public String getInformation() {

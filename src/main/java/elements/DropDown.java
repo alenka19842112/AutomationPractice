@@ -5,6 +5,7 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+@Log4j2
 public class DropDown {
     WebDriver driver;
     String label;
@@ -24,7 +25,9 @@ public class DropDown {
      */
     @Step("selection from the dropdown Date of Birth")
     public void selectDateOfBirth(String option) {
+        log.info("Locator: " + DROPDOWN_DATE_OF_BIRTH);
         driver.findElement(By.xpath(String.format(DROPDOWN_DATE_OF_BIRTH, label))).click();
+        log.info("Locator: " + SELECT_OPTION_XPATH);
         driver.findElement(By.xpath(String.format(SELECT_OPTION_XPATH, option))).click();
     }
 
@@ -35,7 +38,9 @@ public class DropDown {
      */
     @Step("selection from the dropdown")
     public void select(String option) {
+        log.info("Locator: " + DROPDOWN);
         driver.findElement(By.xpath(String.format(DROPDOWN, label))).click();
+        log.info("Locator: " + SELECT_OPTION_XPATH);
         driver.findElement(By.xpath(String.format(SELECT_OPTION_XPATH, option))).click();
     }
 }

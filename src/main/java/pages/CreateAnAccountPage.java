@@ -16,6 +16,7 @@ public class CreateAnAccountPage extends HeaderPage implements IConstants {
      * @return MyAccountPage
      */
     public MyAccountPage create(Account account) {
+        new Radio(driver,"Mrs.").clickRadio();
         new Input(driver,"First name").writeText(account.getFirstName());
         new Input(driver,"Last name").writeText(account.getLastName());
         new Input(driver,"Password").writeText(account.getPassword());
@@ -29,7 +30,6 @@ public class CreateAnAccountPage extends HeaderPage implements IConstants {
         new Input(driver,"City").writeText(account.getCity());
         new DropDown(driver,"State").select(account.getState());
         new Input(driver,"Zip/Postal Code").writeText(account.getZipCode());
-        new DropDown(driver,"Country").select(account.getCountry());
         new TextArea(driver,"Additional information").writeTextArea(account.getInformation());
         new Input(driver,"Mobile phone").writeText(account.getMobilePhone());
         new Button(driver, "Register").clickButton();

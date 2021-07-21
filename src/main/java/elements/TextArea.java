@@ -1,12 +1,14 @@
 package elements;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+@Log4j2
 public class TextArea {
     WebDriver driver;
     String label;
-    private static final String INPUT_TEXT_AREA_LOCATOR = "//*[contains(text(),'%s')]/ancestor::*[@class='textarea form-group']";
+    private static final String INPUT_TEXT_AREA_LOCATOR = "//*[contains(text(),'%s')]/ancestor::*[@class='textarea form-group']/textarea";
 
     public TextArea(WebDriver driver, String label) {
         this.driver = driver;
@@ -19,6 +21,7 @@ public class TextArea {
      * @param text input text
      */
     public void writeTextArea(String text) {
+        log.info("Locator: " + INPUT_TEXT_AREA_LOCATOR);
         driver.findElement(By.xpath(String.format(INPUT_TEXT_AREA_LOCATOR, label))).sendKeys(text);
     }
 }

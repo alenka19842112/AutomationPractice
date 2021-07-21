@@ -14,6 +14,7 @@ public class MyAccountPage extends HeaderPage implements IConstants {
     }
 
     public static final By HOME_BUTTON = By.xpath("//*[@title='Home']");
+    public static final By ACCOUNT_NAME_BUTTON = By.xpath("//*[@class='account']");
 
     /**
      * click 'Home' Button on the My Account Page
@@ -26,5 +27,16 @@ public class MyAccountPage extends HeaderPage implements IConstants {
         log.info("click 'Home' Button on the My Account Page. Locator: " + HOME_BUTTON);
         driver.findElement(HOME_BUTTON).click();
         return new HomePage(driver);
+    }
+
+    /**
+     * get Account name
+     *
+     * @return String Account name
+     */
+    public String getAccountName() {
+        waitForHeaderLogoDisplayed();
+        log.info("Locator: " + ACCOUNT_NAME_BUTTON);
+        return driver.findElement(ACCOUNT_NAME_BUTTON).getText();
     }
 }

@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 public class Checkbox {
     WebDriver driver;
     String label;
-    private static final String CHECKBOX_LOCATOR = "//*[contains(text(),'%s')]/ancestor::*[@class='checkbox']";
+    private static final String CHECKBOX_LOCATOR = "//*[contains(text(),'%s')]/ancestor::*[@class='checkbox']//input";
 
     public Checkbox(WebDriver driver, String label) {
         this.driver = driver;

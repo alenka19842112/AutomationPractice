@@ -38,4 +38,11 @@ public class AuthenticationTest extends BaseTest implements ITestConstants {
         authenticationPage.clickCreateAccountButton("");
         Assert.assertEquals(authenticationPage.getErrorMessageText(ERROR_CREATE_MESSAGE), ERROR_CREATE_MESSAGE);
     }
+    @Test(description = "Log out Test", priority = 1)
+    public void logOutTest() {
+        authenticationPage.login(System.getenv().getOrDefault("Email address", PropertyReader.getProperty("email")),
+                System.getenv().getOrDefault("Password", PropertyReader.getProperty("password")));
+        headerPage.signOut();
+        Assert.assertTrue(headerPage.isSignOutButtonDisplayed());
+    }
 }
