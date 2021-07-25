@@ -1,8 +1,9 @@
 package elements;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
+@Log4j2
 public class Radio {
     WebDriver driver;
     String label;
@@ -17,6 +18,7 @@ public class Radio {
      * click Radio
      */
     public void clickRadio(){
+        log.info("Choice Radio. Locator: " + String.format(RADIO_LOCATOR,label));
         driver.findElement(By.xpath(String.format(RADIO_LOCATOR, label))).click();
     }
 }

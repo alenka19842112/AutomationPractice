@@ -21,7 +21,7 @@ public class TextArea {
      * @param text input text
      */
     public void writeTextArea(String text) {
-        log.info("Locator: " + INPUT_TEXT_AREA_LOCATOR);
+        log.info(String.format("Type '%s' in text area field '%s'", text, label));
         driver.findElement(By.xpath(String.format(INPUT_TEXT_AREA_LOCATOR, label))).sendKeys(text);
     }
 }

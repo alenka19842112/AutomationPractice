@@ -19,7 +19,7 @@ public class Checkbox {
      * click Checkbox
      */
     public void clickCheckbox() {
-        log.info("click Checkbox. Locator:" + CHECKBOX_LOCATOR);
+        log.info("click Checkbox. Locator:" + String.format(CHECKBOX_LOCATOR, label));
         driver.findElement(By.xpath(String.format(CHECKBOX_LOCATOR, label))).click();
     }
 }

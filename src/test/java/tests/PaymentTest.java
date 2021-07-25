@@ -1,11 +1,10 @@
 package tests;
 
-import constans.ITestConstants;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.PropertyReader;
 
-public class PaymentTest extends BaseTest implements ITestConstants {
+public class PaymentTest extends BaseTest {
     @Test(description = "purchase of goods", priority = 1)
     public void purchaseOfGoods() {
         authenticationPage.login(System.getenv().getOrDefault("Email address", PropertyReader.getProperty("email")),
@@ -19,6 +18,6 @@ public class PaymentTest extends BaseTest implements ITestConstants {
                 .clickProceedCheckoutButton();
         paymentPage.clickPayBYButton(PAY_BY);
         orderSummaryPage.clickIConfirmMyOrderButton();
-        Assert.assertEquals(orderConfirmationPage.getOrderStatus(),ORDER_STATUS);
+        Assert.assertEquals(orderConfirmationPage.getOrderStatus(), ORDER_STATUS);
     }
 }

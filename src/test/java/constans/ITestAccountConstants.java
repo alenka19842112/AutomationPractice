@@ -14,4 +14,5 @@ public interface ITestAccountConstants {
     String ZIP_CODE = "00000";
     String INFORMATION = "information";
     String MOBILE_PHONE = "123456789";
+    String NEW_ADDRESS = "12 st.";
 }

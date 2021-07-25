@@ -1,11 +1,10 @@
 package tests;
 
-import constans.ITestConstants;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.PropertyReader;
 
-public class AuthenticationTest extends BaseTest implements ITestConstants {
+public class AuthenticationTest extends BaseTest{
 
     @Test(description = "Login with correct data Test", priority = 1)
     public void inputOfCorrectDataTest() {

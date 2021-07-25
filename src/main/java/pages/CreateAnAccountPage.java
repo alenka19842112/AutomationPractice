@@ -1,11 +1,11 @@
 package pages;
 
-import constans.IConstants;
 import elements.*;
+import io.qameta.allure.Step;
 import object.Account;
 import org.openqa.selenium.WebDriver;
 
-public class CreateAnAccountPage extends HeaderPage implements IConstants {
+public class CreateAnAccountPage extends HeaderPage {
     public CreateAnAccountPage(WebDriver driver) {
         super(driver);
     }
@@ -15,6 +15,7 @@ public class CreateAnAccountPage extends HeaderPage implements IConstants {
      * @param account data account
      * @return MyAccountPage
      */
+    @Step("filling in personal data")
     public MyAccountPage create(Account account) {
         new Radio(driver,"Mrs.").clickRadio();
         new Input(driver,"First name").writeText(account.getFirstName());

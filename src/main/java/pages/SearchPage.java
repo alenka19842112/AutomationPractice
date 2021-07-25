@@ -1,13 +1,12 @@
 package pages;
 
-import constans.IConstants;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 @Log4j2
-public class SearchPage extends HeaderPage implements IConstants {
+public class SearchPage extends HeaderPage {
     public SearchPage(WebDriver driver) {
         super(driver);
     }
@@ -41,14 +40,14 @@ public class SearchPage extends HeaderPage implements IConstants {
     }
 
     /**
-     * Is result search
+     * is Search results displayed
      *
      * @return true
      */
-    public boolean isResultSearch() {
+    public boolean isSearchResultsDisplayed() {
         waitForHeaderLogoDisplayed();
         log.info("Locator: " + SEARCH_RESULT_LOCATOR);
-        return driver.findElements(SEARCH_RESULT_LOCATOR).size() > 0;
+        return driver.findElement(SEARCH_RESULT_LOCATOR).isDisplayed();
     }
 
     /**
@@ -57,10 +56,9 @@ public class SearchPage extends HeaderPage implements IConstants {
      * @return String result
      */
     @Step("Search number of products found")
-    public String resultSearch() {
+    public int getSearchResultsQty() {
         waitForHeaderLogoDisplayed();
         log.info("Locator: " + SEARCH_RESULT_LOCATOR);
-        int quantity = driver.findElements(SEARCH_RESULT_LOCATOR).size();
-        return quantity + " results have been found.";
+        return driver.findElements(SEARCH_RESULT_LOCATOR).size();
     }
 }

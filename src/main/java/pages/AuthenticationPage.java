@@ -1,13 +1,12 @@
 package pages;
 
-import constans.IConstants;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 @Log4j2
-public class AuthenticationPage extends HeaderPage implements IConstants {
+public class AuthenticationPage extends HeaderPage {
 
     public AuthenticationPage(WebDriver driver) {
         super(driver);

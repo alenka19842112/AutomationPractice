@@ -39,16 +39,17 @@ abstract class BasePage implements IConstants {
      * scroll down
      */
     public void scrollDown() {
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,700)", "");
     }
 
     /**
      * mouse hover
+     *
      * @param elementLocator By
-     * @param locator By
+     * @param locator        By
      */
-    public void mouseHover(By elementLocator, By locator){
+    public void mouseHover(By elementLocator, By locator) {
         Actions builder = new Actions(driver);
         WebElement hoverElement = driver.findElement(elementLocator);
         builder.moveToElement(hoverElement).perform();

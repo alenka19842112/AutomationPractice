@@ -25,9 +25,9 @@ public class DropDown {
      */
     @Step("selection from the dropdown Date of Birth")
     public void selectDateOfBirth(String option) {
-        log.info("Locator: " + DROPDOWN_DATE_OF_BIRTH);
+        log.info("Choice DropDown. Locator: " + String.format(DROPDOWN_DATE_OF_BIRTH, label));
         driver.findElement(By.xpath(String.format(DROPDOWN_DATE_OF_BIRTH, label))).click();
-        log.info("Locator: " + SELECT_OPTION_XPATH);
+        log.info("Select option. Locator: " + String.format(SELECT_OPTION_XPATH, option));
         driver.findElement(By.xpath(String.format(SELECT_OPTION_XPATH, option))).click();
     }
 
@@ -38,9 +38,9 @@ public class DropDown {
      */
     @Step("selection from the dropdown")
     public void select(String option) {
-        log.info("Locator: " + DROPDOWN);
+        log.info("Choice DropDown. Locator: " + String.format(DROPDOWN, label));
         driver.findElement(By.xpath(String.format(DROPDOWN, label))).click();
-        log.info("Locator: " + SELECT_OPTION_XPATH);
+        log.info("Select option. Locator: " + String.format(SELECT_OPTION_XPATH, option));
         driver.findElement(By.xpath(String.format(SELECT_OPTION_XPATH, option))).click();
     }
 }

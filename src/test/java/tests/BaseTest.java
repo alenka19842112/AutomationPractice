@@ -1,5 +1,6 @@
 package tests;
 
+import constans.ITestConstants;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +12,7 @@ import pages.*;
 import java.util.concurrent.TimeUnit;
 
 @Log4j2
-public class BaseTest {
+public class BaseTest implements ITestConstants {
     WebDriver driver;
     AuthenticationPage authenticationPage;
     HomePage homePage;
@@ -26,6 +27,9 @@ public class BaseTest {
     OrderSummaryPage orderSummaryPage;
     OrderConfirmationPage orderConfirmationPage;
     CreateAnAccountPage createAnAccountPage;
+    MyAddressesPage myAddressesPage;
+    YourAddressesPage yourAddressesPage;
+    ProductPage productPage;
 
     /**
      * object initialization
@@ -44,6 +48,9 @@ public class BaseTest {
         orderSummaryPage = new OrderSummaryPage(driver);
         orderConfirmationPage = new OrderConfirmationPage(driver);
         createAnAccountPage = new CreateAnAccountPage(driver);
+        myAddressesPage = new MyAddressesPage(driver);
+        yourAddressesPage = new YourAddressesPage(driver);
+        productPage = new ProductPage(driver);
     }
 
     @BeforeMethod

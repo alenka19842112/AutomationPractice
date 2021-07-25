@@ -21,8 +21,15 @@ public class Input {
      * @param text input text
      */
     public void writeText(String text) {
-        log.info("Locator: " + INPUT_XPATH);
+        log.info(String.format("Type '%s' in input field '%s'", text, label));
         driver.findElement(By.xpath(String.format(INPUT_XPATH, label))).sendKeys(text);
     }
 
+    /**
+     * clear text in input field
+     */
+    public void clearText() {
+        log.info("Clear text in Input field. Locator: " + String.format(INPUT_XPATH, label));
+        driver.findElement(By.xpath(String.format(INPUT_XPATH, label))).clear();
+    }
 }
