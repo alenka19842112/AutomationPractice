@@ -11,7 +11,7 @@ public class ProductAddedToCartModalPage extends BasePage {
         super(driver);
     }
 
-    public static final By PROCEED_TO_CHECKOUT_BUTTON = By.xpath("//*[@class='btn btn-default button button-medium']");
+    public static final By PROCEED_TO_CHECKOUT_BUTTON = By.xpath("//*[contains(@class,'button-medium')]");
 
     /**
      * Click 'Proceed to checkout' button

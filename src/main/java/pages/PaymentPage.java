@@ -19,7 +19,7 @@ public class PaymentPage extends HeaderPage {
      * @param payBy String
      * @return OrderSummaryPage
      */
-    @Step("Click 'Pay by' Button.")
+    @Step("Click {payBy} 'Pay by' Button.")
     public OrderSummaryPage clickPayBYButton(String payBy) {
         waitForHeaderLogoDisplayed();
         log.info("Click 'Pay by' Button. Locator: " + PAY_BY_LOCATOR);

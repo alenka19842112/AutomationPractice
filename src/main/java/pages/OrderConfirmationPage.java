@@ -19,7 +19,6 @@ public class OrderConfirmationPage extends HeaderPage {
      */
     public String getOrderStatus() {
         waitForElementVisible(ORDER_STATUS_LOCATOR);
-        log.info("Locator: " + ORDER_STATUS_LOCATOR);
         return driver.findElement(ORDER_STATUS_LOCATOR).getText();
     }
 }

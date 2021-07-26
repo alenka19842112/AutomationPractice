@@ -35,7 +35,7 @@ public class SearchPage extends HeaderPage {
     @Step("Search heading-counter result")
     public String getSearchResult() {
         waitForHeaderLogoDisplayed();
-        log.info("Locator: " + SEARCH_HEADING_LOCATOR);
+        log.info("Search heading-counter result. Locator: " + SEARCH_HEADING_LOCATOR);
         return driver.findElement(SEARCH_HEADING_LOCATOR).getText();
     }
 
@@ -46,7 +46,6 @@ public class SearchPage extends HeaderPage {
      */
     public boolean isSearchResultsDisplayed() {
         waitForHeaderLogoDisplayed();
-        log.info("Locator: " + SEARCH_RESULT_LOCATOR);
         return driver.findElement(SEARCH_RESULT_LOCATOR).isDisplayed();
     }
 
@@ -58,7 +57,7 @@ public class SearchPage extends HeaderPage {
     @Step("Search number of products found")
     public int getSearchResultsQty() {
         waitForHeaderLogoDisplayed();
-        log.info("Locator: " + SEARCH_RESULT_LOCATOR);
+        log.info("Search number of products found. Locator: " + SEARCH_RESULT_LOCATOR);
         return driver.findElements(SEARCH_RESULT_LOCATOR).size();
     }
 }

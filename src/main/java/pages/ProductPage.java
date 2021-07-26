@@ -48,7 +48,7 @@ public class ProductPage extends HeaderPage {
      * @param option String
      * @return ProductPage
      */
-    @Step("selection from the dropdown Size")
+    @Step("selection option = {option} from the dropdown Size")
     public ProductPage selectSize(String option) {
         waitForHeaderLogoDisplayed();
         log.info("Choice DropDown Size. Locator: " + SIZE_DROPDOWN_LOCATOR);

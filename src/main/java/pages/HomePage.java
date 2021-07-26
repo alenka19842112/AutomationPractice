@@ -11,9 +11,9 @@ public class HomePage extends HeaderPage {
         super(driver);
     }
 
-    public static final String PRODUCT_ELEMENT_LOCATOR = "//*[contains(text(),'%s')]/ancestor::*[@class='product-container']";
-    public static final String ADD_PRODUCT_LOCATOR = PRODUCT_ELEMENT_LOCATOR + "//a[contains(@class,'button ajax_add')]";
-    public static final String MORE_BUTTON = PRODUCT_ELEMENT_LOCATOR + "//a[contains(@class,'button lnk_view')]";
+    public static final String ADD_PRODUCT_LOCATOR = "//*[@data-id-product='%s']";
+    public static final String PRODUCT_INDEX = "//*[@data-id-product='%s']/ancestor::*[@class='product-container']";
+    public static final String MORE_BUTTON = "//*[@data-id-product='%s']/ancestor::*[@class='button-container']/a[@title='View']";
 
     /**
      * open Home Page
@@ -29,28 +29,28 @@ public class HomePage extends HeaderPage {
     /**
      * click Add Product Button on Home Page
      *
-     * @param productPrice String
+     * @param productNumber String
      * @return ProductAddedToCartModalPage
      */
-    @Step("click Add Product Button on the Home Page")
-    public ProductAddedToCartModalPage clickAddProductButton(String productPrice) {
+    @Step("click 'Add Product Button'  productNumber = {productNumber} on the Home Page")
+    public ProductAddedToCartModalPage clickAddProductButton(String productNumber) {
         scrollDown();
-        log.info("click Add Product Button, Locator:" + ADD_PRODUCT_LOCATOR);
-        mouseHover((By.xpath(String.format(PRODUCT_ELEMENT_LOCATOR, productPrice))), (By.xpath(String.format(ADD_PRODUCT_LOCATOR, productPrice))));
+        log.info("click Add Product Button, Locator:" + String.format(ADD_PRODUCT_LOCATOR, productNumber));
+        mouseHoverAndClick(By.xpath(String.format(PRODUCT_INDEX, productNumber)), By.xpath(String.format(ADD_PRODUCT_LOCATOR, productNumber)));
         return new ProductAddedToCartModalPage(driver);
     }
 
     /**
      * click More Button on Home Page
      *
-     * @param productPrice String
+     * @param productNumber String
      * @return ProductPage
      */
-    @Step("click More Button on the Home Page")
-    public ProductPage clickMoreButton(String productPrice) {
+    @Step("click More Button productNumber = {productNumber} on the Home Page")
+    public ProductPage clickMoreButton(String productNumber) {
         scrollDown();
         log.info("click More Button, Locator:" + MORE_BUTTON);
-        mouseHover((By.xpath(String.format(PRODUCT_ELEMENT_LOCATOR, productPrice))), (By.xpath(String.format(MORE_BUTTON, productPrice))));
+        mouseHoverAndClick((By.xpath(String.format(PRODUCT_INDEX, productNumber))), (By.xpath(String.format(MORE_BUTTON, productNumber))));
         return new ProductPage(driver);
     }
 }

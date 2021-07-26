@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.PropertyReader;
 
-public class AuthenticationTest extends BaseTest{
+public class AuthenticationTest extends BaseTest {
 
     @Test(description = "Login with correct data Test", priority = 1)
     public void inputOfCorrectDataTest() {
@@ -28,15 +28,18 @@ public class AuthenticationTest extends BaseTest{
 
     @Test(description = "input existing email in Create field Test", priority = 1)
     public void inputExistingEmailInCreateTest() {
+        headerPage.clickSignInButton();
         authenticationPage.clickCreateAccountButton(System.getenv().getOrDefault("Email address", PropertyReader.getProperty("email")));
         Assert.assertEquals(authenticationPage.getErrorMessageText(ERROR_CREATE_ACCOUNT_USING) + " ", ERROR_CREATE_ACCOUNT_USING);
     }
 
     @Test(description = "input incorrect email in Create field Test", priority = 1)
     public void inputIncorrectEmailInCreateTest() {
+        headerPage.clickSignInButton();
         authenticationPage.clickCreateAccountButton("");
         Assert.assertEquals(authenticationPage.getErrorMessageText(ERROR_CREATE_MESSAGE), ERROR_CREATE_MESSAGE);
     }
+
     @Test(description = "Log out Test", priority = 1)
     public void logOutTest() {
         authenticationPage.login(System.getenv().getOrDefault("Email address", PropertyReader.getProperty("email")),

@@ -65,8 +65,8 @@ public class HeaderPage extends BasePage {
      * @param text String
      * @return Search Page
      */
-    @Step("Search input and click 'Search' button")
-    public SearchPage searchInputAndClickSearchButton(String text) {
+    @Step("Search {text} in input and click 'Search' button")
+    public SearchPage searchForText(String text) {
         waitForHeaderLogoDisplayed();
         log.info(String.format("Input search text: '%s' in Search field.", text));
         driver.findElement(SEARCH_LOCATOR).sendKeys(text);

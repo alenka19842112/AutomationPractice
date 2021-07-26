@@ -47,7 +47,6 @@ public class AuthenticationPage extends HeaderPage {
      */
     @Step("Error message when entering invalid data in authentication field")
     public String getErrorMessageText(String message) {
-        log.info("Locator: " + ERROR_MESSAGE_LOCATOR);
         return driver.findElement(By.xpath(String.format(ERROR_MESSAGE_LOCATOR, message))).getText();
     }
 
@@ -59,7 +58,6 @@ public class AuthenticationPage extends HeaderPage {
      */
     @Step("Fill in {email} in Create an account field and click 'Create an account' button")
     public CreateAnAccountPage clickCreateAccountButton(String email) {
-        clickSignInButton();
         waitForElementVisible(CREATE_BUTTON);
         log.info(String.format("fill in Email address: '%s' in Create an account field.", email));
         driver.findElement(EMAIL_CREATE_LOCATOR).sendKeys(email);

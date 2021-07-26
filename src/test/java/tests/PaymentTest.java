@@ -10,7 +10,7 @@ public class PaymentTest extends BaseTest {
         authenticationPage.login(System.getenv().getOrDefault("Email address", PropertyReader.getProperty("email")),
                 System.getenv().getOrDefault("Password", PropertyReader.getProperty("password")));
         myAccountPage.clickHomeButton();
-        homePage.clickAddProductButton(PRODUCT_PRICE);
+        homePage.clickAddProductButton(PRODUCT_NUMBER);
         productAddedToCartModalPage.clickProceedToCheckoutButton();
         cartPage.clickProceedCheckoutButton();
         addressPage.clickProceedCheckoutButton();

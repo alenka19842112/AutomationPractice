@@ -11,7 +11,7 @@ abstract class CheckoutCommonPage extends HeaderPage {
         super(driver);
     }
 
-    public static final By PROCEED_CHECKOUT_BUTTON = By.xpath("//*[contains(@class,'button btn btn-default')]");
+    public static final By PROCEED_CHECKOUT_BUTTON = By.xpath("//*[contains(@class,'button btn')]");
 
     /**
      * click 'Proceed to checkout' Button

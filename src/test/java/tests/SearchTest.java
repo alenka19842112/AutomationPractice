@@ -7,7 +7,7 @@ public class SearchTest extends BaseTest {
 
     @Test(description = "input text in search field", priority = 1)
     public void resultSearchTest() {
-        headerPage.searchInputAndClickSearchButton("dress");
+        headerPage.searchForText("dress");
         Assert.assertEquals(searchPage.getSearchTitleResult(), "\"DRESS\"");
         Assert.assertTrue(searchPage.isSearchResultsDisplayed());
         Assert.assertEquals(searchPage.getSearchResult(), searchPage.getSearchResultsQty() + " results have been found.");
@@ -15,7 +15,7 @@ public class SearchTest extends BaseTest {
 
     @Test(description = "empty line input in search field", priority = 1)
     public void emptyInputResultSearchTest() {
-        headerPage.searchInputAndClickSearchButton("");
+        headerPage.searchForText("");
         Assert.assertEquals(searchPage.getSearchResult(), searchPage.getSearchResultsQty() + " results have been found.");
     }
 }
