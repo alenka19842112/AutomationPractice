@@ -17,7 +17,7 @@ public class CartTest extends BaseTest {
         homePage.clickAddProductButton(PRODUCT_NUMBER);
         productAddedToCartModalPage.clickProceedToCheckoutButton();
         cartPage.deleteProductFromCart(PRODUCT_NUMBER);
-        Assert.assertTrue(cartPage.isDeleteProductFromCart(PRODUCT_NUMBER));
+        Assert.assertTrue(cartPage.isProductDeletedFromCart(PRODUCT_NUMBER));
     }
 
     @Test(description = "Checking the value of goods. Choice of quantity,size and color of the goods from the Cart Test", priority = 1)

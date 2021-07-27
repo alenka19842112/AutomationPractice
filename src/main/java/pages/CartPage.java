@@ -49,7 +49,7 @@ public class CartPage extends CheckoutCommonPage {
      * @param productNumber String
      * @return true
      */
-    public boolean isDeleteProductFromCart(String productNumber) {
+    public boolean isProductDeletedFromCart(String productNumber) {
         waitForHeaderLogoDisplayed();
         return waitUntilElementDisappears(By.xpath(String.format(PRODUCT_INDEX_LOCATOR, productNumber)));
     }
