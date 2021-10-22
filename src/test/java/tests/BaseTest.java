@@ -1,34 +1,56 @@
 package tests;
 
+import constans.ITestConstants;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import pages.HeaderPage;
-import pages.HomePage;
-import pages.LoginPage;
-import pages.MyAccountPage;
+import pages.*;
 
 import java.util.concurrent.TimeUnit;
 
 @Log4j2
-public class BaseTest {
+public class BaseTest implements ITestConstants {
     WebDriver driver;
-    LoginPage loginPage;
+    AuthenticationPage authenticationPage;
     HomePage homePage;
     HeaderPage headerPage;
     MyAccountPage myAccountPage;
+    SearchPage searchPage;
+    ProductAddedToCartModalPage productAddedToCartModalPage;
+    CartPage cartPage;
+    AddressPage addressPage;
+    ShippingPage shippingPage;
+    PaymentPage paymentPage;
+    OrderSummaryPage orderSummaryPage;
+    OrderConfirmationPage orderConfirmationPage;
+    CreateAnAccountPage createAnAccountPage;
+    MyAddressesPage myAddressesPage;
+    YourAddressesPage yourAddressesPage;
+    ProductPage productPage;
 
     /**
      * object initialization
      */
     public void init() {
-        loginPage = new LoginPage(driver);
+        authenticationPage = new AuthenticationPage(driver);
         headerPage = new HeaderPage(driver);
         homePage = new HomePage(driver);
         myAccountPage = new MyAccountPage(driver);
+        searchPage = new SearchPage(driver);
+        productAddedToCartModalPage = new ProductAddedToCartModalPage(driver);
+        cartPage = new CartPage(driver);
+        addressPage = new AddressPage(driver);
+        shippingPage = new ShippingPage(driver);
+        paymentPage = new PaymentPage(driver);
+        orderSummaryPage = new OrderSummaryPage(driver);
+        orderConfirmationPage = new OrderConfirmationPage(driver);
+        createAnAccountPage = new CreateAnAccountPage(driver);
+        myAddressesPage = new MyAddressesPage(driver);
+        yourAddressesPage = new YourAddressesPage(driver);
+        productPage = new ProductPage(driver);
     }
 
     @BeforeMethod

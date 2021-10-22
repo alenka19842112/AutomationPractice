@@ -1,19 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="AutomationPractice Test Suite" parallel="tests" thread-count="2">
-    <test name="LoginTests">
-<!--       <groups>-->
-<!--            <run>-->
-<!--                <include name="slow" />-->
-<!--            </run>-->
-<!--        </groups>-->
+    <test name="AuthenticationTests">
         <classes>
-          <class name="tests.LoginTest" />
+            <class name="tests.AuthenticationTest"/>
         </classes>
     </test> <!-- Test -->
-    <test name="ProductTest">
+    <test name="SearchTests">
         <classes>
-            <!--    <class name="tests.ProductTest" />-->
+            <class name="tests.SearchTest"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="CartTests">
+        <classes>
+            <class name="tests.CartTest"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="PaymentTests">
+        <classes>
+            <class name="tests.PaymentTest"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="CreatAnAccountTests">
+        <classes>
+            <class name="tests.CreateAnAccountTest"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="MyAddressTests">
+        <classes>
+            <class name="tests.MyAddressTest"/>
         </classes>
     </test> <!-- Test -->
 </suite>

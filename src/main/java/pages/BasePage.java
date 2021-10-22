@@ -1,11 +1,15 @@
 package pages;
 
 import constans.IConstants;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+@Log4j2
 abstract class BasePage implements IConstants {
     WebDriver driver;
 
@@ -30,5 +34,37 @@ abstract class BasePage implements IConstants {
      */
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
+    }
+
+    /**
+     * scroll down
+     */
+    public void scrollDown() {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0,700)", "");
+    }
+
+    /**
+     * mouse hover
+     *
+     * @param elementLocator By
+     * @param locator        By
+     */
+    public void mouseHoverAndClick(By elementLocator, By locator) {
+        Actions builder = new Actions(driver);
+        WebElement hoverElement = driver.findElement(elementLocator);
+        builder.moveToElement(hoverElement).perform();
+        log.info("Click element. Locator: " + locator);
+        driver.findElement(locator).click();
+    }
+
+    /**
+     * wait until the element disappears
+     *
+     * @return true
+     */
+    public boolean waitUntilElementDisappears(By locator) {
+        return new WebDriverWait(driver, 5)
+                .until(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
 }
